@@ -38,10 +38,10 @@ def solve_knapsack_model(values, weights, capacity):
             # Afficher les résultats
             if model.status == GRB.OPTIMAL:
                 print("Valeur optimale:", model.objVal)
-                print("Objets sélectionnés:")
-                for i in range(num_items):
-                    if x[i].X > 0.5:  # Vérifie si l'objet est sélectionné
-                        print(f"  Objet {i}: valeur = {values_dict[i]}, poids = {weights_dict[i]}")
+                #print("Objets sélectionnés:")
+                #for i in range(num_items):
+                    #if x[i].X > 0.5:  # Vérifie si l'objet est sélectionné
+                        #print(f"  Objet {i}: valeur = {values_dict[i]}, poids = {weights_dict[i]}")
 
 # Générer les données pour 10 000 objets
 data = generate_knapsack(10000)
