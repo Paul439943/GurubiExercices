@@ -1,7 +1,6 @@
 import gurobipy as gp
 from gurobipy import GRB
 
-
 # 24 Hour Load Forecast (MW)
 load_forecast = [
     4, 4, 4, 4, 4, 4, 6, 6, 12, 12, 12, 12,
