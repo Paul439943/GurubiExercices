@@ -50,11 +50,11 @@ with gp.Model("portfolio") as model:
         expected_return = sum(mu[i] * portfolio[i] for i in range(n))
 
         # Créer un DataFrame pour afficher les résultats
-        df = pd.DataFrame(
-            data=portfolio + [risk, expected_return],
-            index=[f"asset_{i}" for i in range(n)] + ["risk", "return"],
-            columns=["Portfolio"],
-        )
-        print(df)
+        #df = pd.DataFrame(
+            #data=portfolio + [risk, expected_return],
+            #index=[f"asset_{i}" for i in range(n)] + ["risk", "return"],
+            #columns=["Portfolio"],
+        #)
+        #print(df)
     else:
         print("Aucune solution optimale n'a été trouvée.")
