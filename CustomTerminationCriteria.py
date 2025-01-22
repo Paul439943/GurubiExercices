@@ -19,7 +19,12 @@ def callback(model, where, *, cbdata):
         runtime = model.cbGet(GRB.Callback.RUNTIME)
 
         # Obtenir le MIPGap courant
-        current_gap = model.cbGet(GRB.Callback.MIPGAP)
+        best_obj = model.cbGet(GRB.Callback.MIP_OBJBST)  # Meilleure solution trouvée
+        bound_obj = model.cbGet(GRB.Callback.MIP_OBJBND)  # Meilleure borne
+        if abs(best_obj) > 1e-6:  # Évite la division par zéro
+            current_gap = abs(bound_obj - best_obj) / abs(best_obj)
+        else:
+            current_gap = float('inf')  # Si aucune solution n'a été trouvée
 
         # Si c'est la première solution trouvée, initialiser le temps
         if cbdata.last_gap == GRB.INFINITY:
