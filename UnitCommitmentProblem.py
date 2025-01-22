@@ -148,4 +148,4 @@ with gp.Env() as env, gp.Model(env=env) as model:
 
     # Optimize and display results
     model.optimize()
-    show_results()
+    #show_results()

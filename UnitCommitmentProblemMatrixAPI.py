@@ -123,9 +123,9 @@ with gp.Env() as env, gp.Model(env=env) as model:
     model.optimize()
 
     # Display results
-    if model.Status == GRB.OPTIMAL:
-        print(f"Optimal cost: {model.ObjVal:.2f}")
-        print("Power output:")
-        print(power.X)
-        print("Commitment status:")
-        print(commit.X)
+    #if model.Status == GRB.OPTIMAL:
+        #print(f"Optimal cost: {model.ObjVal:.2f}")
+        #print("Power output:")
+        #print(power.X)
+        #print("Commitment status:")
+        #print(commit.X)
